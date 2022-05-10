@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1652208002 source:c:\users\denis\my drive\coding\c++\stack\main.cpp
+	<bits/stdc++.h>
+	"Stack.h"
+	"CmdMenu.h"
+	<unistd.h>
+
+1652208928 c:\users\denis\my drive\coding\c++\stack\stack.h
+	<bits/stdc++.h>
+	<windows.h>
+
+1651761313 c:\users\denis\my drive\coding\c++\stack\menu.h
+	<bits/stdc++.h>
+	<unistd.h>
+	<filesystem>
+
+1651564822 source:g:\my drive\coding\c++\stack (1)\main.cpp
+	<bits/stdc++.h>
+	"Stack.h"
+	"Menu.h"
+	"CmdMenu.h"
+	<unistd.h>
+
+1651486152 g:\my drive\coding\c++\stack (1)\stack.h
+	<bits/stdc++.h>
+	<windows.h>
+
+1651744635 g:\my drive\coding\c++\stack (1)\menu.h
+	<bits/stdc++.h>
+	<unistd.h>
+	<filesystem>
+
+1651745564 g:\my drive\coding\c++\stack (1)\cmdmenu.h
+	<bits/stdc++.h>
+	<unistd.h>
+	<filesystem>
+
+1652208765 c:\users\denis\my drive\coding\c++\stack\cmdmenu.h
+	<bits/stdc++.h>
+	<unistd.h>
+	<filesystem>
+	<chrono>
+	<iomanip>
+	<WinUser.h>
+
+1652024266 source:g:\my drive\coding\c++\stack\main.cpp
+	<bits/stdc++.h>
+	"Stack.h"
+	"CmdMenu.h"
+	<unistd.h>
+
+1651486152 g:\my drive\coding\c++\stack\stack.h
+	<bits/stdc++.h>
+	<windows.h>
+
+1652087713 g:\my drive\coding\c++\stack\cmdmenu.h
+	<bits/stdc++.h>
+	<unistd.h>
+	<filesystem>
+	<chrono>
+	<iomanip>
+	<WinUser.h>
+

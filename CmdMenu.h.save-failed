@@ -1,0 +1,129 @@
+#include<bits/stdc++.h>
+#include <unistd.h>
+#include<filesystem>
+using namespace std;
+char pth[256];
+typedef int T;
+vector<Stack<T>>v(64);
+string filePath;
+int cmdIndex=-1;
+bool ok=true;
+void mainCMD();
+void cdFunc();
+void helpFunc();
+void printFunc();
+void initial()
+{
+    filePath=pth;
+    cout<<"Microsoft Windows [Version 6.9.14206.1234]\n";
+    cout<<"(c) Microsoft Corporation. All rights reserved.\n\n";
+}
+void menuCMD()
+{
+    while(ok)
+        mainCMD();
+}
+string toLower(string s)
+{
+    for(char &c:s)
+        c=tolower(c);
+    return s;
+}
+vector<string> split(const string& s, char delimiter)
+{
+    vector<string> tokens;
+    string token;
+    istringstream tokenStream(s);
+    while (getline(tokenStream, token, delimiter))
+    {
+        tokens.push_back(token);
+    }
+    return tokens;
+}
+void mainCMD()
+{
+    cout<<filePath;
+    if(cmdIndex!=-1)
+        cout<<'\\'<<cmdIndex;
+    cout<<'>';
+
+
+    string s;
+    getline(cin, s);
+ //   char delimiter=" ";
+    vector<string>cmd=split(s,' ');
+
+    cout<<s<<'\n';
+    map<string,int>m=
+    {
+        {"cls",1},{"cd",2}, {"help",3},{"print",4}
+    };
+///ls
+///cd
+///tree
+    switch(m[toLower(cmd)])
+    {
+    case 1://cls
+        system("CLS");
+        break;
+    case 2://cd
+        cdFunc();
+        break;
+    case 3:
+        helpFunc();
+        break;
+    case 4:
+        printFunc();
+        break;
+    default:
+        cout<<"'"<<cmd<<"'"<<" is not recognized as an internal or external command,\n";
+        cout<<"operable program or batch file.\n";
+    }
+
+    cout<<'\n';
+}
+void printFunc()
+{
+    if(cmdIndex!=-1)
+        cout<<v[cmdIndex];
+    else
+    {
+        cout<<"The system cannot find the path specified.\n";
+    }
+}
+int string_to_int(const string s)
+{
+    int ans=0;
+    for(auto c:s)
+    {
+        if(c<'0' or c>'9')
+            return -1;
+        ans=ans*10+c-'0';
+    }
+    return ans;
+}
+void helpFunc()
+{
+    cout<<"For more information on a specific command, type HELP command-name\n";
+    cout<<"CD             "<<"Displays the name of or changes the current stack directory.\n";
+    cout<<"CLS            "<<"Clears the screen.\n";
+    cout<<"PRINT          "<<"Prints the stack in the directory stack.\n";
+    cout<<"EXIT           "<<"Quits the CMD.EXE program (command interpreter).\n";
+    cout<<"HELP           "<<"Provides Help information for Windows commands.\n";
+}
+
+void cdFunc()
+{
+    string s;
+    cin>>s;
+    int nr=string_to_int(s);
+    if(s=="../")
+        cmdIndex=-1;
+    else if(nr!=-1 and cmdIndex==-1)
+        cmdIndex=nr;
+    else
+        cout<<"The system cannot find the path specified.\n";
+}
+
+
+
